@@ -1,15 +1,5 @@
 // /app/week-3/item-list.js
-// Import in a way that survives any default/named export mismatch:
-import * as ItemMod from "./item.js";
-const Item = ItemMod.default ?? ItemMod.Item;
-
-// Safety check (dev-only). If this trips, the import isn't a component.
-if (typeof Item !== "function") {
-  throw new Error(
-    "Item import is not a component function. " +
-      "Check /app/week-3/item.js exports."
-  );
-}
+import Item from "./item.js";
 
 const items = [
   { name: "milk, 4 L 🥛", quantity: 1, category: "dairy" },
